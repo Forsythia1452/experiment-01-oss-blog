@@ -1,0 +1,24 @@
+# Ghost runtime and private data
+runtime/
+.cache/
+.tools/
+
+# Dependencies and generated packages
+node_modules/
+theme/oss-blog-theme/dist/
+theme/oss-blog-theme/*.zip
+
+# Local configuration and secrets
+.env
+*.local
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated screenshots may contain account information
+evidence/private/
+
