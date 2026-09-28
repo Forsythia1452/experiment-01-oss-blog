@@ -1,0 +1,31 @@
+{
+  "name": "oss-blog-theme",
+  "description": "侯宇晴的 Ghost 中文个人博客主题，包含按标签的阅读时长相关推荐。",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "侯宇晴",
+    "email": "student@example.invalid"
+  },
+  "license": "MIT",
+  "keywords": ["ghost-theme", "blog", "chinese"],
+  "engines": {
+    "ghost": ">=6.0.0 <7.0.0"
+  },
+  "config": {
+    "posts_per_page": 6,
+    "card_assets": true,
+    "image_sizes": {
+      "s": {"width": 360},
+      "m": {"width": 720},
+      "l": {"width": 1200}
+    }
+  },
+  "scripts": {
+    "test:theme": "gscan ."
+  },
+  "devDependencies": {
+    "gscan": "6.3.0"
+  }
+}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12372a">
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="brand" href="{{@site.url}}" aria-label="{{@site.title}} 首页">
+                <span class="brand-mark" aria-hidden="true">雨</span>
+                <span>{{@site.title}}</span>
+            </a>
+            <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+                <span class="sr-only">切换导航</span><span aria-hidden="true">☰</span>
+            </button>
+            <nav id="site-navigation" class="site-navigation" aria-label="主导航">
+                {{navigation}}
+                <div class="header-actions">
+                    <button class="text-button" type="button" data-ghost-search aria-label="搜索文章">搜索</button>
+                    {{#if @member}}
+                        <a class="button button-quiet" href="#/portal/account">我的账户</a>
+                    {{else}}
+                        <a class="button button-quiet" href="#/portal/signin">登录</a>
+                        <a class="button" href="#/portal/signup">注册</a>
+                    {{/if}}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        {{{body}}}
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>© {{date format="YYYY"}} {{@site.title}} · 侯宇晴 · 软件2304</p>
+            <p><a href="{{@site.url}}/ghost/">管理端</a> · <button class="link-button" type="button" data-ghost-search>搜索</button></p>
+        </div>
+    </footer>
+    <script src="{{asset "js/site.js"}}" defer></script>
+    {{ghost_foot}}
+</body>
+</html>
+

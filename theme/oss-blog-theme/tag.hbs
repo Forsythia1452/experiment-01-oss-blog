@@ -1,0 +1,15 @@
+{{!< default}}
+{{#tag}}
+<header class="archive-header shell">
+    <p class="eyebrow">TOPIC</p>
+    <h1>{{name}}</h1>
+    <p>{{#if description}}{{description}}{{else}}浏览「{{name}}」主题下的全部文章。{{/if}}</p>
+</header>
+{{/tag}}
+<section class="section shell">
+    <div class="post-grid">
+        {{#foreach posts}}{{> "post-card"}}{{else}}<div class="empty-state"><h2>该标签下暂无文章</h2></div>{{/foreach}}
+    </div>
+    {{pagination}}
+</section>
+

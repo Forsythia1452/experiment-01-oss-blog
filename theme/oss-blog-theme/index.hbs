@@ -1,0 +1,38 @@
+{{!< default}}
+
+<section class="hero">
+    <div class="shell hero-grid">
+        <div>
+            <p class="eyebrow">开源软件 · 学习笔记 · 工程实践</p>
+            <h1>把复杂技术，写成可以重现的答案。</h1>
+            <p class="hero-copy">{{@site.description}}</p>
+            <div class="hero-actions">
+                <a class="button" href="#latest">开始阅读</a>
+                <button class="button button-quiet" type="button" data-ghost-search>搜索全站</button>
+            </div>
+        </div>
+        <aside class="hero-note" aria-label="博客说明">
+            <span class="note-index">01</span>
+            <p>这里记录从问题、实验到结论的完整路径。每篇文章都标明标签和预估阅读时间。</p>
+        </aside>
+    </div>
+</section>
+
+<section id="latest" class="section shell">
+    <div class="section-heading">
+        <div><p class="eyebrow">LATEST NOTES</p><h2>最新文章</h2></div>
+        <p>从代码、工具到复盘，保留每一次可追溯的学习记录。</p>
+    </div>
+    <div class="post-grid">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{else}}
+            <div class="empty-state">
+                <h3>还没有发布文章</h3>
+                <p>请在 Ghost 管理端导入演示数据或发布第一篇文章。</p>
+            </div>
+        {{/foreach}}
+    </div>
+    {{pagination}}
+</section>
+
