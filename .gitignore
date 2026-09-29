@@ -22,3 +22,6 @@ Thumbs.db
 # Generated screenshots may contain account information
 evidence/private/
 
+# Local artifact builders and render intermediates
+tmp/
+

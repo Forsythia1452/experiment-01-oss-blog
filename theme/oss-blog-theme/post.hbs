@@ -1,0 +1,51 @@
+{{!< default}}
+
+{{#post}}
+<article class="article shell-narrow {{post_class}}">
+    <header class="article-header">
+        <div class="article-kicker">
+            {{#if primary_tag}}<a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
+            <span>{{date published_at format="YYYY-MM-DD"}}</span>
+            <span>{{reading_time minute="1 分钟阅读" minutes="% 分钟阅读"}}</span>
+        </div>
+        <h1>{{title}}</h1>
+        {{#if custom_excerpt}}<p class="article-deck">{{custom_excerpt}}</p>{{/if}}
+        <p class="byline">由 {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}} 撰写</p>
+    </header>
+    {{#if feature_image}}
+        <figure class="article-image">
+            <img srcset="{{img_url feature_image size="m"}} 720w, {{img_url feature_image size="l"}} 1200w" sizes="(max-width: 900px) 100vw, 900px" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+            {{#if feature_image_caption}}<figcaption>{{feature_image_caption}}</figcaption>{{/if}}
+        </figure>
+    {{/if}}
+    <div class="gh-content">{{content}}</div>
+    {{#if tags}}<footer class="article-tags" aria-label="文章标签">{{tags prefix="标签：" separator=" · "}}</footer>{{/if}}
+</article>
+
+<section class="related shell" aria-labelledby="related-title" data-related-posts>
+    <div class="section-heading compact">
+        <div><p class="eyebrow">KEEP READING</p><h2 id="related-title">相关阅读</h2></div>
+        {{#if primary_tag}}<p>基于「{{primary_tag.name}}」标签匹配，并显示每篇的预计阅读时长。</p>{{/if}}
+    </div>
+    <div class="post-grid related-grid">
+        {{#if primary_tag}}
+            {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}" include="tags,authors" limit="3" as |related_posts|}}
+                {{#foreach related_posts}}
+                    {{> "post-card"}}
+                {{else}}
+                    <div class="empty-state"><h3>暂无同标签文章</h3><p>可返回首页继续浏览其他内容。</p></div>
+                {{/foreach}}
+            {{else}}
+                <div class="empty-state error-state"><h3>推荐暂时不可用</h3><p>内容查询失败，请稍后重试。</p></div>
+            {{/get}}
+        {{else}}
+            <div class="empty-state"><h3>未设置文章标签</h3><p>为文章添加标签后，系统会自动生成相关推荐。</p></div>
+        {{/if}}
+    </div>
+</section>
+
+<section class="comments shell-narrow" aria-label="文章评论">
+    {{comments title="参与讨论" count=true}}
+</section>
+{{/post}}
+
