@@ -1,6 +1,6 @@
 # Pull Request 自审记录
 
-拟定 PR：`feat(theme): add tag-aware related reading`，关联 `docs/issue-related-posts.md`。由于用户尚未创建 GitHub 仓库，本文档是待上传后粘贴到 PR 的真实自审结果，不伪造远程 PR 编号。
+实际 PR：[实验仓库 PR #2](https://github.com/Forsythia1452/experiment-01-oss-blog/pull/2)，标题为 `feat(theme): add tag-aware related reading`，通过 `Closes #1` 关联[相关推荐 Issue #1](https://github.com/Forsythia1452/experiment-01-oss-blog/issues/1)。以下为已粘贴到 PR 的自审结果。
 
 - [x] 只修改主题和文档，未修改 Ghost 核心。
 - [x] 排除当前文章，限制最多 3 条，有空、无标签和查询失败状态。

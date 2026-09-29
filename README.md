@@ -105,12 +105,12 @@ Compress-Archive -Path assets,partials,author.hbs,default.hbs,error.hbs,index.hb
 
 ## Git 与开源规范
 
-本地仓库使用 `main` 与 `feature/blog-enhancement` 分支，保留至少 5 个可解释提交。用户尚未创建 GitHub 远程，因此当前不写入虚假 URL、Issue 编号或 PR 编号。上传后应：
+GitHub 仓库为 [`Forsythia1452/experiment-01-oss-blog`](https://github.com/Forsythia1452/experiment-01-oss-blog)。仓库使用 `main` 与 `feature/blog-enhancement` 分支，保留至少 5 个可解释提交。真实协作记录如下：
 
-1. 用 [`docs/issue-related-posts.md`](docs/issue-related-posts.md) 建 Issue。
-2. 从 `feature/blog-enhancement` 创建 PR 到 `main`。
-3. 粘贴 [`docs/pr-review.md`](docs/pr-review.md) 自审结果并关联 Issue。
-4. 合并后打 `v1.0-lab` 标签。
+1. [Issue #1：按标签和阅读时长生成相关推荐](https://github.com/Forsythia1452/experiment-01-oss-blog/issues/1)。
+2. [PR #2：feat(theme): add tag-aware related reading](https://github.com/Forsythia1452/experiment-01-oss-blog/pull/2)，从 `feature/blog-enhancement` 合并到 `main`。
+3. PR 使用 [`docs/pr-review.md`](docs/pr-review.md) 的自审结果并通过 `Closes #1` 关联 Issue。
+4. PR 当前保持开启，待课堂检查后合并并打 `v1.0-lab` 标签。
 
 上游项目、固定版本和许可证见 [`NOTICE.md`](NOTICE.md)。本人增量代码使用 MIT License。
 
